@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Guessing Your Prices | Ashley Creatives</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #72B8B8 0%, #426A67 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .brand-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #72B8B8;
+        }
+
+        .brand-title {
+            color: #C42092;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .brand-subtitle {
+            color: #426A67;
+            font-size: 1em;
+            font-weight: 400;
+        }
+
+        h1 {
+            color: #C42092;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .intro {
+            color: #426A67;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            color: #C42092;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .helper-text {
+            color: #84B97A;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #426A67;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #72B8B8;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: #FFFFFF;
+        }
+
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #C42092;
+            box-shadow: 0 0 0 3px rgba(196, 32, 146, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #C42092 0%, #84B97A 100%);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(196, 32, 146, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .results {
+            display: none;
+        }
+
+        .results.active {
+            display: block;
+        }
+
+        .main-price {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #C42092 0%, #72B8B8 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            color: #FFFFFF;
+        }
+
+        .main-price h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .main-price .price {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .price-range {
+            background: #F8F8F8;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #84B97A;
+        }
+
+        .price-range h3 {
+            color: #C42092;
+            margin-bottom: 15px;
+        }
+
+        .range-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .range-item:last-child {
+            border-bottom: none;
+        }
+
+        .range-label {
+            color: #426A67;
+            font-weight: 600;
+        }
+
+        .range-value {
+            color: #C42092;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        .breakdown {
+            background: #F8F8F8;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .breakdown h3 {
+            color: #C42092;
+            margin-bottom: 15px;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            color: #426A67;
+        }
+
+        .breakdown-value {
+            font-weight: 600;
+        }
+
+        .insight {
+            background: linear-gradient(135deg, #84B97A 0%, #72B8B8 100%);
+            color: #FFFFFF;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 30px;
+            background: #426A67;
+            color: #FFFFFF;
+            border-radius: 15px;
+            line-height: 1.8;
+        }
+
+        .cta strong {
+            color: #84B97A;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #FFFFFF;
+            color: #C42092;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #C42092;
+            color: #FFFFFF;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 30px 20px;
+            border-top: 2px solid #E0E0E0;
+        }
+
+        .footer-logo {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .footer-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #C42092 0%, #84B97A 100%);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .footer-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(196, 32, 146, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .main-price .price {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- BRAND HEADER -->
+        <div class="brand-header">
+            <div class="brand-title">Ashley Creatives</div>
+            <div class="brand-subtitle">Pricing Calculator</div>
+        </div>
+
+        <!-- FORM -->
+        <div id="calculator-form">
+            <h1>Stop Guessing Your Prices</h1>
+            <p class="intro">
+                If pricing your signs or home decor has ever felt like a guessing game, you're not alone.
+                <br><br>
+                This quick calculator will help you figure out a price that actually makes sense for your time, your costs, and your market.
+            </p>
+
+            <form id="pricingForm">
+                <!-- SECTION 1: PRODUCT COSTS -->
+                <div class="section">
+                    <h2 class="section-title">💰 Product Costs</h2>
+                    <p class="helper-text">Just estimate if you're unsure—this doesn't need to be perfect.</p>
+                    
+                    <div class="form-group">
+                        <label for="materials">Material cost per item ($)</label>
+                        <input type="number" id="materials" step="0.01" min="0" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="packaging">Packaging cost ($)</label>
+                        <input type="number" id="packaging" step="0.01" min="0" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shipping">Shipping cost (0 if not applicable) ($)</label>
+                        <input type="number" id="shipping" step="0.01" min="0" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="overhead">Estimated overhead per item ($)</label>
+                        <input type="number" id="overhead" step="0.01" min="0" value="0" required>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: TIME & LABOR -->
+                <div class="section">
+                    <h2 class="section-title">⏱️ Time & Labor</h2>
+                    <p class="helper-text">Choose a number that feels fair for your time.</p>
+
+                    <div class="form-group">
+                        <label>Time to create one item</label>
+                        <div style="display: flex; gap: 15px;">
+                            <div style="flex: 1;">
+                                <input type="number" id="time_hours" min="0" value="1" required style="width: 100%;">
+                                <small style="color: #426A67; display: block; margin-top: 5px;">Hours</small>
+                            </div>
+                            <div style="flex: 1;">
+                                <input type="number" id="time_minutes" min="0" max="59" value="0" required style="width: 100%;">
+                                <small style="color: #426A67; display: block; margin-top: 5px;">Minutes</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hourly_rate">Desired hourly rate ($)</label>
+                        <input type="number" id="hourly_rate" step="1" min="1" value="25" required>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: SALES PLATFORM -->
+                <div class="section">
+                    <h2 class="section-title">🛍️ Sales Platform</h2>
+
+                    <div class="form-group">
+                        <label for="platform">Where do you sell?</label>
+                        <select id="platform" required>
+                            <option value="Etsy">Etsy</option>
+                            <option value="Shopify">Shopify</option>
+                            <option value="Local">Local craft shows / markets</option>
+                            <option value="Wholesale">Boutique / wholesale</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: MARKET + REGION -->
+                <div class="section">
+                    <h2 class="section-title">📍 Market & Region</h2>
+
+                    <div class="form-group">
+                        <label for="market_type">What's your market like?</label>
+                        <select id="market_type" required>
+                            <option value="rural">Small town / rural</option>
+                            <option value="mid">Mid-range suburban</option>
+                            <option value="affluent">Affluent / boutique-heavy</option>
+                            <option value="tourist">Tourist-driven</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="region">What region are you in?</label>
+                        <select id="region" required>
+                            <option value="Northeast">Northeast</option>
+                            <option value="Midwest">Midwest</option>
+                            <option value="South">South</option>
+                            <option value="West">West</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brand_level">How do you position your brand?</label>
+                        <select id="brand_level" required>
+                            <option value="budget">Budget-friendly</option>
+                            <option value="mid">Mid-range</option>
+                            <option value="premium">Premium</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Get My Price 🎯</button>
+            </form>
+        </div>
+
+        <!-- RESULTS -->
+        <div id="results" class="results">
+            <div class="main-price">
+                <h2>Your Recommended Price:</h2>
+                <div class="price" id="ideal-price">$0</div>
+            </div>
+
+            <div class="price-range">
+                <h3>📊 Pricing Range</h3>
+                <div class="range-item">
+                    <span class="range-label">Minimum:</span>
+                    <span class="range-value" id="minimum-price">$0</span>
+                </div>
+                <div class="range-item">
+                    <span class="range-label">Ideal:</span>
+                    <span class="range-value" id="ideal-price-range">$0</span>
+                </div>
+                <div class="range-item">
+                    <span class="range-label">Premium:</span>
+                    <span class="range-value" id="premium-price">$0</span>
+                </div>
+            </div>
+
+            <div class="breakdown">
+                <h3>🧠 Price Breakdown</h3>
+                <div class="breakdown-item">
+                    <span>Base costs:</span>
+                    <span class="breakdown-value" id="base-costs">$0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span>Labor:</span>
+                    <span class="breakdown-value" id="labor-cost">$0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span>Fees impact:</span>
+                    <span class="breakdown-value" id="fees-impact">$0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span>Profit margin:</span>
+                    <span class="breakdown-value" id="profit-margin">$0</span>
+                </div>
+            </div>
+
+            <div class="insight" id="insight-text">
+            </div>
+
+            <div class="cta">
+                <p>
+                    If this helped you see your pricing more clearly, there's a lot more you can do with this once you start applying it across your products.
+                </p>
+                <p style="margin-top: 15px;">
+                    <strong>Keep going—you're closer than you think.</strong>
+                </p>
+                <a href="#" class="back-btn" onclick="resetCalculator(); return false;">Calculate Another Price</a>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="footer">
+                <img src="https://kajabi-storefronts-production.s3.amazonaws.com/file-uploads/sites/2148088522/images/b7b4b0-7cf-3530-a8e1-ed53a40f206b_Ashley_Creatives_logo.png" alt="Ashley Creatives" class="footer-logo">
+                <a href="https://www.creativemakermovement.com" target="_blank" class="footer-cta">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('pricingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculatePrice();
+        });
+
+        function calculatePrice() {
+            // Get input values
+            const materials = parseFloat(document.getElementById('materials').value) || 0;
+            const packaging = parseFloat(document.getElementById('packaging').value) || 0;
+            const shipping = parseFloat(document.getElementById('shipping').value) || 0;
+            const overhead = parseFloat(document.getElementById('overhead').value) || 0;
+            const hours = parseFloat(document.getElementById('time_hours').value) || 0;
+            const minutes = parseFloat(document.getElementById('time_minutes').value) || 0;
+            const time_hours = hours + (minutes / 60);
+            const hourly_rate = parseFloat(document.getElementById('hourly_rate').value) || 0;
+            const platform = document.getElementById('platform').value;
+            const market_type = document.getElementById('market_type').value;
+            const region = document.getElementById('region').value;
+            const brand_level = document.getElementById('brand_level').value;
+
+            // Prevent divide by zero
+            if (time_hours === 0) {
+                alert('Time to create must be greater than 0 (add at least 1 minute)');
+                return;
+            }
+
+            // STEP 1: BASE COST
+            const base_cost = materials + packaging + shipping + overhead;
+            const labor_cost = time_hours * hourly_rate;
+            const true_cost = base_cost + labor_cost;
+
+            // STEP 2: PLATFORM FEES
+            let fee_multiplier = 1.0;
+            if (platform === "Etsy") fee_multiplier = 1.12;
+            else if (platform === "Shopify") fee_multiplier = 1.03;
+            else if (platform === "Local") fee_multiplier = 1.05;
+            else if (platform === "Wholesale") fee_multiplier = 1.00;
+
+            // STEP 3: MARKET MULTIPLIER
+            let market_multiplier = 1.0;
+            if (market_type === "rural") market_multiplier = 0.9;
+            else if (market_type === "mid") market_multiplier = 1.0;
+            else if (market_type === "affluent") market_multiplier = 1.2;
+            else if (market_type === "tourist") market_multiplier = 1.15;
+
+            // STEP 4: REGION MULTIPLIER
+            let region_multiplier = 1.0;
+            if (region === "Northeast") region_multiplier = 1.10;
+            else if (region === "Midwest") region_multiplier = 0.95;
+            else if (region === "South") region_multiplier = 0.97;
+            else if (region === "West") region_multiplier = 1.08;
+
+            // STEP 5: BRAND POSITIONING
+            let profit_margin = 0.35;
+            if (brand_level === "budget") profit_margin = 0.20;
+            else if (brand_level === "mid") profit_margin = 0.35;
+            else if (brand_level === "premium") profit_margin = 0.50;
+
+            // STEP 6: FINAL PRICING
+            const cost_with_fees = true_cost * fee_multiplier;
+            const ideal_price = cost_with_fees * (1 + profit_margin) * market_multiplier * region_multiplier;
+            const minimum_price = cost_with_fees * 1.15;
+            const premium_price = ideal_price * 1.15;
+
+            // STEP 7: HOURLY BREAKDOWN
+            const low_hourly = (minimum_price - base_cost) / time_hours;
+            const ideal_hourly = (ideal_price - base_cost) / time_hours;
+
+            // Calculate fees and profit for display
+            const fees_impact = cost_with_fees - true_cost;
+            const profit_amount = ideal_price - cost_with_fees;
+
+            // Display results
+            document.getElementById('ideal-price').textContent = formatPrice(ideal_price);
+            document.getElementById('minimum-price').textContent = formatPrice(minimum_price);
+            document.getElementById('ideal-price-range').textContent = formatPrice(ideal_price);
+            document.getElementById('premium-price').textContent = formatPrice(premium_price);
+            
+            document.getElementById('base-costs').textContent = formatPrice(base_cost);
+            document.getElementById('labor-cost').textContent = formatPrice(labor_cost);
+            document.getElementById('fees-impact').textContent = formatPrice(fees_impact);
+            document.getElementById('profit-margin').textContent = formatPrice(profit_amount);
+
+            // Insight text
+            const insightText = `
+                At your minimum price, you're earning about ${formatPrice(low_hourly)} per hour.<br><br>
+                At your ideal price, you're earning about ${formatPrice(ideal_hourly)} per hour.
+            `;
+            document.getElementById('insight-text').innerHTML = insightText;
+
+            // Show results, hide form
+            document.getElementById('calculator-form').style.display = 'none';
+            document.getElementById('results').classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function formatPrice(amount) {
+            // Round to nearest .99 or whole dollar
+            let rounded = Math.round(amount);
+            if (rounded > 10) {
+                rounded = Math.floor(amount) + 0.99;
+            }
+            return '$' + rounded.toFixed(2);
+        }
+
+        function resetCalculator() {
+            document.getElementById('calculator-form').style.display = 'block';
+            document.getElementById('results').classList.remove('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "started": "2026-05-05T18:11:00Z",
+  "currentStep": 10,
+  "completed": ["claude-api-key", "profile", "whisper", "telegram", "email", "memory", "titanium", "morning-greeting", "evening-greeting"],
+  "skipped": [],
+  "userName": "Kathy"
+}

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashley Creatives | Turn Your Creativity Into Income</title>
+    <meta name="description" content="Learn how to start a sign business, sell handmade signs, and build a real DIY sign business. Step-by-step guidance for creative makers.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #2F2F2F;
+            background: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: #FFFFFF;
+            padding: 20px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            max-height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #426A67;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #C42092;
+        }
+
+        .btn-primary {
+            background: #C42092;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #a01876;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(196, 32, 146, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid #426A67;
+            color: #426A67;
+            padding: 10px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #72B8B8;
+            border-color: #72B8B8;
+            color: #FFFFFF;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wide-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Alternating backgrounds */
+        .bg-white {
+            background: #FFFFFF;
+        }
+
+        .bg-teal-light {
+            background: #f0f7f7;
+        }
+
+        .bg-green-light {
+            background: #f4f7f5;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 100px 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3em;
+            font-weight: 700;
+            color: #426A67;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .accent {
+            color: #C42092;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #2F2F2F;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .video-placeholder {
+            background: #f0f7f7;
+            border: 3px dashed #72B8B8;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            color: #426A67;
+            font-weight: 600;
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* SOCIAL PROOF STRIP */
+        .proof-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .proof-item {
+            padding: 20px;
+        }
+
+        .proof-item p {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #426A67;
+            font-weight: 600;
+        }
+
+        /* HEADINGS */
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #426A67;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #426A67;
+            margin-bottom: 20px;
+        }
+
+        .accent-text {
+            color: #C42092;
+        }
+
+        /* TEXT SECTIONS */
+        .text-section {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .text-section p {
+            font-size: 1.15em;
+            margin-bottom: 20px;
+            color: #2F2F2F;
+        }
+
+        .text-section ul {
+            text-align: left;
+            list-style: none;
+            padding-left: 0;
+            margin: 30px 0;
+        }
+
+        .text-section ul li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            font-size: 1.1em;
+        }
+
+        .text-section ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #84B97A;
+            font-weight: 700;
+            font-size: 1.3em;
+        }
+
+        /* ECOSYSTEM CARDS */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: #FFFFFF;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #72B8B8;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            margin-bottom: 20px;
+            color: #2F2F2F;
+        }
+
+        /* IMAGE PLACEHOLDERS */
+        .img-placeholder {
+            background: linear-gradient(135deg, #f0f7f7 0%, #f4f7f5 100%);
+            border: 2px dashed #72B8B8;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #426A67;
+            font-weight: 600;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .img-placeholder .dimensions {
+            font-size: 0.9em;
+            color: #84B97A;
+            margin-top: 10px;
+        }
+
+        /* VISUAL PROOF GRID */
+        .visual-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .visual-proof-item {
+            text-align: center;
+        }
+
+        .visual-proof-item .img-placeholder {
+            min-height: 250px;
+            margin-bottom: 15px;
+        }
+
+        .visual-proof-item p {
+            font-weight: 600;
+            color: #426A67;
+        }
+
+        /* TESTIMONIALS */
+        .testimonial {
+            background: linear-gradient(135deg, #72B8B8 0%, #84B97A 100%);
+            color: #FFFFFF;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 60px auto;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .testimonial blockquote {
+            font-size: 1.3em;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial cite {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        /* TWO-COLUMN SECTIONS */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .two-column .img-placeholder {
+            min-height: 400px;
+        }
+
+        /* PRICING SECTION */
+        .pricing-box {
+            background: #FFFFFF;
+            border: 3px solid #C42092;
+            border-radius: 15px;
+            padding: 50px;
+            max-width: 700px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .pricing-box h3 {
+            color: #C42092;
+            margin-bottom: 20px;
+        }
+
+        .pricing-box p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #426A67;
+            color: #FFFFFF;
+            padding: 60px 40px 30px;
+        }
+
+        footer a {
+            color: #72B8B8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: #84B97A;
+            margin-bottom: 15px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none; /* Mobile menu would be implemented with JS */
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .visual-proof-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ecosystem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <img src="https://kajabi-storefronts-production.s3.amazonaws.com/file-uploads/sites/2148088522/images/b7b4b0-7cf-3530-a8e1-ed53a40f206b_Ashley_Creatives_logo.png" alt="Ashley Creatives" class="logo">
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/creative-maker-movement">Creative Maker Movement</a></li>
+                <li><a href="https://join.creativemakermovement.com/join-svg-club">SVG Club</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/tutorials">Tutorials</a></li>
+                <li><a href="/login" class="btn-secondary">Member Login</a></li>
+                <li><a href="/join-cmm" class="btn-primary">Join CMM</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero bg-white">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+            <div>
+                <h1>Turn your creativity into something that <span class="accent">actually pays you back.</span></h1>
+                <p>If you've been making signs, dreaming about selling, or already trying and feeling stuck… I'll show you how to turn it into real income — step by step.</p>
+                
+                <div class="hero-buttons">
+                    <a href="/join-cmm" class="btn-primary">Join Creative Maker Movement</a>
+                    <a href="/tutorials" class="btn-secondary">Explore Resources</a>
+                </div>
+            </div>
+            
+            <div class="video-placeholder">
+                <div>
+                    <strong>Video Placeholder</strong><br>
+                    Ashley Introduction Video<br>
+                    <span class="dimensions">Recommended: 16:9 ratio (e.g., 1920x1080)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF STRIP -->
+    <section class="bg-teal-light">
+        <div class="container">
+            <div class="proof-strip">
+                <div class="proof-item">
+                    <p>"I made my first $1,200 at a craft show."</p>
+                </div>
+                <div class="proof-item">
+                    <p>"I finally stopped underpricing everything."</p>
+                </div>
+                <div class="proof-item">
+                    <p>"This gave me a plan I didn't have before."</p>
+                </div>
+                <div class="proof-item">
+                    <p>"Ashley explains things in a way that makes sense."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RELATABILITY SECTION -->
+    <section class="bg-white">
+        <div class="container text-section">
+            <h2>If this sounds like you...</h2>
+            <ul>
+                <li>You love creating, but don't know how to actually sell it</li>
+                <li>You've tried figuring it out alone and feel all over the place</li>
+                <li>You second-guess your pricing, your designs… everything</li>
+                <li>You know this could be something more</li>
+            </ul>
+            <p style="margin-top: 30px; font-size: 1.3em; font-weight: 600; color: #C42092;">You're exactly who I built this for.</p>
+        </div>
+    </section>
+
+    <!-- POSSIBILITY SHIFT -->
+    <section class="bg-green-light">
+        <div class="container text-section">
+            <h2>Now imagine this:</h2>
+            <ul>
+                <li>You know exactly what to make</li>
+                <li>You feel confident pricing your work</li>
+                <li>You start seeing consistent sales</li>
+                <li>You walk into a craft show knowing what you're doing</li>
+            </ul>
+            <p style="margin-top: 30px; font-size: 1.2em;">That's not something you have to guess your way into anymore.</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL INSERT 1 -->
+    <div class="testimonial">
+        <blockquote>"SVG Club saves me so much time — I can focus on creating instead of designing from scratch."</blockquote>
+        <cite>— [Testimonial Name]</cite>
+    </div>
+
+    <!-- ECOSYSTEM OVERVIEW -->
+    <section class="bg-white">
+        <div class="container">
+            <h2 style="text-align: center;">Everything you need to build, grow, and sell</h2>
+            
+            <div class="ecosystem-grid">
+                <div class="card">
+                    <h3>Creative Maker Movement</h3>
+                    <p>Your step-by-step path to building a real handmade business</p>
+                    <a href="/join-cmm" class="btn-primary">Learn More</a>
+                </div>
+
+                <div class="card">
+                    <h3>SVG Club</h3>
+                    <p>Monthly ready-to-use designs you can actually sell</p>
+                    <a href="https://join.creativemakermovement.com/join-svg-club" class="btn-primary">Join SVG Club</a>
+                </div>
+
+                <div class="card">
+                    <h3>Events / Conference</h3>
+                    <p>Hands-on learning and connection with other makers</p>
+                    <a href="/events" class="btn-primary">View Events</a>
+                </div>
+
+                <div class="card">
+                    <h3>Supplies & Tools</h3>
+                    <p>Pre-cut stencils, materials, and tools for your projects</p>
+                    <a href="/shop" class="btn-primary">Shop Now</a>
+                </div>
+
+                <div class="card">
+                    <h3>Tutorials</h3>
+                    <p>Free + paid learning resources to level up your skills</p>
+                    <a href="/tutorials" class="btn-primary">Browse Tutorials</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- START WHERE YOU ARE -->
+    <section class="bg-teal-light">
+        <div class="container text-section">
+            <h2>Start where you are</h2>
+            
+            <div style="text-align: left; max-width: 700px; margin: 40px auto;">
+                <h3>Just getting started?</h3>
+                <p>Start with <a href="/tutorials" style="color: #C42092; font-weight: 600;">tutorials</a> or <a href="https://join.creativemakermovement.com/join-svg-club" style="color: #C42092; font-weight: 600;">SVG Club</a></p>
+                
+                <h3 style="margin-top: 30px;">Ready to start selling?</h3>
+                <p><a href="/join-cmm" style="color: #C42092; font-weight: 600;">Creative Maker Movement</a> gives you the full business framework</p>
+                
+                <h3 style="margin-top: 30px;">Want to grow faster?</h3>
+                <p><a href="/events" style="color: #C42092; font-weight: 600;">Events</a> + deeper training accelerate your progress</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL INSERT 2 -->
+    <div class="testimonial">
+        <blockquote>"CMM helped me finally start selling. I wasn't sure where to begin, but Ashley broke it down in a way that actually made sense."</blockquote>
+        <cite>— [Testimonial Name]</cite>
+    </div>
+
+    <!-- VISUAL PROOF SECTION -->
+    <section class="bg-white">
+        <div class="container">
+            <h2 style="text-align: center;">See what our members are creating</h2>
+            
+            <div class="visual-proof-grid">
+                <div class="visual-proof-item">
+                    <div class="img-placeholder">
+                        <div>
+                            <strong>Image 1</strong><br>
+                            <span class="dimensions">400x400px</span>
+                        </div>
+                    </div>
+                    <p>First project</p>
+                </div>
+                
+                <div class="visual-proof-item">
+                    <div class="img-placeholder">
+                        <div>
+                            <strong>Image 2</strong><br>
+                            <span class="dimensions">400x400px</span>
+                        </div>
+                    </div>
+                    <p>First craft show</p>
+                </div>
+                
+                <div class="visual-proof-item">
+                    <div class="img-placeholder">
+                        <div>
+                            <strong>Image 3</strong><br>
+                            <span class="dimensions">400x400px</span>
+                        </div>
+                    </div>
+                    <p>First sales</p>
+                </div>
+                
+                <div class="visual-proof-item">
+                    <div class="img-placeholder">
+                        <div>
+                            <strong>Image 4</strong><br>
+                            <span class="dimensions">400x400px</span>
+                        </div>
+                    </div>
+                    <p>Growing business</p>
+                </div>
+                
+                <div class="visual-proof-item">
+                    <div class="img-placeholder">
+                        <div>
+                            <strong>Image 5</strong><br>
+                            <span class="dimensions">400x400px</span>
+                        </div>
+                    </div>
+                    <p>Success story</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ASHLEY -->
+    <section class="bg-green-light">
+        <div class="container">
+            <div class="two-column">
+                <div class="img-placeholder" style="min-height: 500px;">
+                    <div>
+                        <strong>Ashley Photo</strong><br>
+                        <span class="dimensions">600x800px portrait</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2>Hi, I'm Ashley</h2>
+                    <p>I started just like you — making things I loved, but having no idea how to turn it into something that actually paid me.</p>
+                    
+                    <p>I struggled with pricing, wasted time on designs that didn't sell, and felt completely overwhelmed trying to figure it all out alone.</p>
+                    
+                    <p>But once I cracked the code, everything changed. I built a real business doing what I love — and now I teach other women how to do the same.</p>
+                    
+                    <p><strong>You don't need to figure this out alone anymore.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL INSERT 3 -->
+    <div class="testimonial">
+        <blockquote>"I love that Ashley doesn't gatekeep. She shares EVERYTHING and genuinely wants you to succeed."</blockquote>
+        <cite>— [Testimonial Name]</cite>
+    </div>
+
+    <!-- CMM FEATURE SECTION -->
+    <section class="bg-white">
+        <div class="container text-section">
+            <h2>This isn't just about making signs.</h2>
+            <p style="font-size: 1.2em; margin-bottom: 40px;">It's about building something that pays you back.</p>
+            
+            <div style="text-align: left; max-width: 700px; margin: 0 auto;">
+                <h3>Inside Creative Maker Movement:</h3>
+                <ul>
+                    <li>Step-by-step training on building a profitable sign business</li>
+                    <li>Monthly exclusive SVG designs you can sell</li>
+                    <li>Access to all tutorials and workshops</li>
+                    <li>A supportive community of makers who get it</li>
+                    <li>Small business licensing included</li>
+                </ul>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a href="/join-cmm" class="btn-primary" style="font-size: 1.2em; padding: 18px 40px;">Join Creative Maker Movement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="bg-teal-light">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 60px;">Is this for you?</h2>
+            
+            <div class="two-column">
+                <div style="background: #FFFFFF; padding: 40px; border-radius: 15px; border-left: 5px solid #84B97A;">
+                    <h3 style="color: #84B97A;">This is for you if:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 10px 0;">✓ You want to sell your handmade work</li>
+                        <li style="padding: 10px 0;">✓ You're ready to follow a proven system</li>
+                        <li style="padding: 10px 0;">✓ You value guidance over guessing</li>
+                        <li style="padding: 10px 0;">✓ You're willing to take action</li>
+                        <li style="padding: 10px 0;">✓ You want a supportive community</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #FFFFFF; padding: 40px; border-radius: 15px; border-left: 5px solid #C42092;">
+                    <h3 style="color: #C42092;">This is NOT for you if:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 10px 0;">✗ You want overnight success without effort</li>
+                        <li style="padding: 10px 0;">✗ You're not willing to invest time</li>
+                        <li style="padding: 10px 0;">✗ You expect everything handed to you</li>
+                        <li style="padding: 10px 0;">✗ You won't follow through on training</li>
+                        <li style="padding: 10px 0;">✗ You're just browsing with no intention</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING + CTA -->
+    <section class="bg-white">
+        <div class="container">
+            <div class="pricing-box">
+                <h3>I know investing in something like this can feel like a stretch.</h3>
+                <p>But figuring it out alone costs you more time, frustration… and honestly, more money.</p>
+                <p><strong>Every month you wait is another month you're not making sales.</strong></p>
+                
+                <a href="/join-cmm" class="btn-primary" style="font-size: 1.3em; padding: 20px 50px; margin-top: 20px;">Join Creative Maker Movement Today</a>
+                
+                <p style="margin-top: 20px; font-size: 0.95em; color: #426A67;">Start building your business the right way.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL INSERT 4 -->
+    <div class="testimonial">
+        <blockquote>"I thought I'd never be able to price my work confidently. Now I know my worth and my customers see the value too."</blockquote>
+        <cite>— [Testimonial Name]</cite>
+    </div>
+
+    <!-- FINAL CLOSE -->
+    <section class="bg-green-light">
+        <div class="container text-section">
+            <h2>You don't have to have this all figured out.</h2>
+            <p style="font-size: 1.3em; margin-bottom: 40px;">You just have to start somewhere.</p>
+            
+            <a href="/join-cmm" class="btn-primary" style="font-size: 1.2em; padding: 18px 40px;">Start Here</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="/">Home</a></p>
+                    <p><a href="/creative-maker-movement">Creative Maker Movement</a></p>
+                    <p><a href="https://join.creativemakermovement.com/join-svg-club">SVG Club</a></p>
+                    <p><a href="/events">Events</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <p><a href="/tutorials">Tutorials</a></p>
+                    <p><a href="/shop">Shop</a></p>
+                    <p><a href="/blog">Blog</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Members</h4>
+                    <p><a href="/login">Member Login</a></p>
+                    <p><a href="/support">Support</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">YouTube</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ashley Creatives. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
